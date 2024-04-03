@@ -1,10 +1,13 @@
-import Todo from './lib';
-const todo = new Todo('Arreglar tsconfig.json y package.json');
-console.log(todo.completed); // false
-todo.toggle();
-console.log(todo.completed); // true
-todo.toggle();
-console.log(todo.completed); // false
-todo.toggle();
-console.log(todo.completed); // false
-console.log('hola mundo!');
+import debounce from './lib'
+
+
+const deb = debounce(()=>{console.log('ejecutando f')},2000)
+deb()
+deb()
+
+const deb2 = debounce(()=>{console.log('ejecutando g')},2000)
+deb2()
+setTimeout(deb2, 3000)
+
+
+

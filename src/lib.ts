@@ -1,13 +1,14 @@
-export default class Todo {
-  description: string;
-  completed: boolean;
 
-  constructor(description: string) {
-    this.description = description;
-    this.completed = false;
-  }
-
-  toggle() {
-    this.completed = !this.completed;
-  }
+  export default function debounce(callback:any, interval:number){
+    let timerId:NodeJS.Timeout;
+    return (...args:any[]) => {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+        callback(...args);
+        }, interval);
+    };
 }
+
+
+
+
