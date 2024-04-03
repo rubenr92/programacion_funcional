@@ -8,13 +8,7 @@ export default function memoize<T>(callback:any){
             cache[key] = result
             return result
         } else{
-            console.log('t')
             return cache[key] + 't'
         }
     }
 }
-const memoized = memoize((p1:number, p2:number)=>{return p1+p2})
-
-console.log(memoized(2,3))
-console.log(memoized(4,5))
-console.log(memoized(2,3))
